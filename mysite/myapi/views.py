@@ -76,6 +76,10 @@ def Signup(request, ):
         return Response({'token': token.key, "data": serializers.data})
     return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['POST'])
+def Test_token(request,):
+    return Response({'token':"loading_token"})
+
 
 class userlistfetcher(APIView):
     def get(self, request, *args, **kwargs):
